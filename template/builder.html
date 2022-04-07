@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desserts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+  </head>
+  <body>
+
+    <header>
+      <a href="#" class="brand">Made With <i class="fa fa-heart"></i> For Desserts</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/recommendor">Dessert Recommendation</a>
+          <a href="/baking">Whats Baking?</a>
+          <a href="/builder">Recipe Builder</a>
+        </div>
+      </div>
+    </header>
+    
+    <div class="bake",class="form-group">
+    <h3>Input measurements in cup :</h3>
+    <video class="img" src="{{ url_for('static', filename='8.mp4')}}" autoplay muted loop></video>
+    </div>
+
+<div class="det">
+<form action="/result" method="POST"> 
+<div class="bake1">
+<table>
+    <tr><td>Flour</td>    
+    <td><input type="text" name="flour" id="flour" ></td></tr>
+   
+    <tr><td>Sugar</td>    
+    <td><input type="text" name="sugar" id="sugar" ></td></tr>
+    
+    <tr><td>Butter</td>    
+    <td><input type="text" name="butter" id="butter" ></td></tr>
+
+    <tr><td>Milk</td>    
+    <td><input type="text" name="milk" id="milk" ></td></tr>
+    
+    <tr><td>Egg</td>    
+    <td><input type="text" name="egg" id="egg" ></td></tr>
+    
+    <tr><td>Oil</td>    
+    <td><input type="text" name="oil" id="oil" ></td></tr>
+
+    <tr><td>Cream</td>    
+    <td><input type="text" name="cream" id="cream" ></td></tr>
+    
+    <tr><td>Powder</td>    
+    <td><input type="text" name="powder" id="powder" ></td></tr>
+
+    <tr><td>Water</td>    
+    <td><input type="text" name="water" id="water"></td></tr>
+
+    <tr><td>Fruits</td>    
+    <td><input type="text" name="fruits" id="fruits"></td></tr>
+
+    <tr><td>Chocolate</td>    
+    <td><input type="text" name="chocolate" id="chocolate"></td></tr>
+
+    <tr><td>Juice</td>    
+    <td><input type="text" name="juice" id="juice"></td></tr>
+
+    <tr><td>Extract</td>    
+    <td><input type="text" name="extract" id="extract"></td></tr>
+    
+    <tr><td>Yeast</td>    
+    <td><input type="text" name="yeast" id="yeast"></td></tr>
+
+    <tr><td>Baking powder</td>    
+    <td><input type="text" name="bakingpowder" id="bakingpowder"></td></tr>
+
+    <tr><td>Salt</td>    
+    <td><input type="text" name="salt" id="salt"></td></tr>
+    
+</table>
+</div>
+
+<input type="submit" value="Submit"><br><br>
+</form>
+</div>
+</body>
+</html>

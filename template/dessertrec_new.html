@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desserts</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">  
+    </script>  
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">  
+    </script>  
+    
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
+        rel="stylesheet" type="text/css" />  
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+  </head>
+  <body>
+
+    <header>
+      <a href="#" class="brand">Made With <i class="fa fa-heart"></i> For Desserts</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/recommendor">Dessert Recommendation</a>
+          <a href="/baking">Whats Baking?</a>
+          <a href="/builder">Recipe Builder</a>
+        </div>
+      </div>
+    </header>
+    
+    <div class="model2",class="form-group">
+    <video class="img" src="{{ url_for('static', filename='8.mp4')}}" autoplay muted loop></video>
+    <h1 style="align-items: center;font-family:'Rowdies',cursive;">Given a dessert name, what other dessert<br>recommendations can I get? 🍰</h1>
+    <h2 style="align-items: center;font-family:'Rowdies',cursive;"><br>You can choose over 2000 recipes and our ML based model will display some top dessert recommendations for you🔍 </h2>
+    <h2 style="align-items: center;font-family:'Rowdies',cursive;"><br>Try it out for yourself below! 👇🏽</h2>
+    <form action="/predict" method="POST">
+    <td><input type="text" name="dessertname" id="dessertname" ></td></tr>
+    <input style="align-items: center;color:pink;font-family:'Rowdies',cursive;" type="submit" value="Recommend"><br><br>
+    </form>
+    </div>
+      <script>
+  $( function() {
+    var availableDessert = [
+        {% for name in dessert_name_array %}
+            "{{name}}",
+        {% endfor %}
+    ];
+    $( "#dessertname" ).autocomplete({
+      source: availableDessert,
+      minLength: 3
+    });
+  } );
+  </script>
+    </body>
+</html>
+
+      
+
+
