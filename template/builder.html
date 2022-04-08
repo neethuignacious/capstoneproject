@@ -25,12 +25,12 @@
     </header>
     
     <div class="bake",class="form-group">
-    <h3>Input measurements in cup :</h3>
+    <h3>Input measurements in cup:</h3>
     <video class="img" src="{{ url_for('static', filename='8.mp4')}}" autoplay muted loop></video>
     </div>
 
-<div class="det">
-<form action="/result" method="POST"> 
+<div class="det",class="form-group">
+<form action="/result" method="POST">
 <div class="bake1">
 <table>
     <tr><td>Flour</td>    
@@ -57,6 +57,11 @@
     <tr><td>Powder</td>    
     <td><input type="text" name="powder" id="powder" ></td></tr>
 
+</table>
+</div>
+
+<div class="bake2">
+<table>
     <tr><td>Water</td>    
     <td><input type="text" name="water" id="water"></td></tr>
 
@@ -80,12 +85,13 @@
 
     <tr><td>Salt</td>    
     <td><input type="text" name="salt" id="salt"></td></tr>
-    
 </table>
 </div>
 
+<div class="bake3"> 
 <input type="submit" value="Submit"><br><br>
 </form>
+</div>
 </div>
 </body>
 </html>
