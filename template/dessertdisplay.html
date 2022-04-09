@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desserts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+  </head>
+  <body>
+
+<img class="img" src="{{ url_for('static', filename='backimage.jpg')}}"></img>
+    <header>
+    <img class="img" src="{{ url_for('static', filename='backimage.jpg')}}"></img>
+      <a href="#" class="brand">Made With <i class="fa fa-heart"></i> For Desserts</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/recommendor">Dessert Recommendation</a>
+          <a href="/baking">Whats Baking?</a>
+          <a href="/builder">Recipe Builder</a>
+        </div>
+      </div>
+    </header>
+    
+<div class="results">
+	    <center>
+	      <h1 id="name" class="text-uppercase" style="text-transform:uppercase;font-family:'Rowdies',cursive;color:#722F37;margin-top:140px;">{{dn}}</h2>
+	    </center>
+</div>
+<div id="mycontent">
+    <div id="mcontent">
+      <div class="row">
+        <img class="poster" style="border-radius:40px;margin-left:90px;margin-top:140px;" height="400" width="260" src='{{image}}'>
+        <div class="column" style="margin-top:100px;font-size:20px;font-family:'Rowdies',cursive;">
+        <h6 id="category" style="font-size: 15px;color:black;font-family:'Rowdies',cursive;"><br>CATEGORY: &nbsp;{{category}}</h6>
+        <h6 id="detail" style="font-size: 15px;color:black;font-family:'Rowdies',cursive;"><br>BAKE DETAILS: &nbsp;{{detail}}</h6>
+        <h6 id="ingred" style="font-size: 15px;color:black;font-family:'Rowdies',cursive;"><br>INGREDIENTS: &nbsp;{{ingred}}</h6>
+        <h6 id="instruc" style="font-size: 15px;color:black;font-family:'Rowdies',cursive;"><br>METHOD: &nbsp;{{instruc}}</h6>
+      </div>
+    </div>
+</div>
+
+      <div class="dess" style="color:#722F37;">
+        <center>
+          <h2 style="font-family:'Rowdies',cursive;"><br>RECOMMENDED DESSERTS FOR YOU</h2>
+          <h5>(Click on the dessert to get recommendations)</h5>
+        </center>
+      </div>     
+        <div class="row">
+          {% for i in range(0,5) %}
+          <div class="column">
+                      <div class="castcard card" style="width:14rem;color: #fff;font-family: 'Rowdies', cursive;" title='{{data[i]}}'>
+                      <div class="imghvr">
+                      <img class="card-img-top cast-img" style="border-radius:30px" id='{{data[i]}}' height="360" width="245" src='{{images[i]}}'>
+                      <figcaption class="fig">
+                      <button class="card-btn btn btn-danger"><a href="/printing/{{data[i]}}">Click me</button></a>
+                      </figcaption>
+                      </div>
+                      </div>
+                      <div class="card-body" style="font-family: 'Rowdies', cursive;font-size: 18px;">
+                      <h5 class="card-title" style="width:14rem;color:black;font-family: 'Rowdies', cursive;text-align:center;">{{data[i]}}</h5>
+                      </div>
+          </div>
+          {% endfor %}
+        </div>
+        
+    <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+    </script>
+</body>       
+</header>

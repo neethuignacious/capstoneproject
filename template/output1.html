@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desserts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+  </head>
+  <body>
+<img class="img" src="{{ url_for('static', filename='backimage.jpg')}}"></img> 
+    <header>
+      <a href="#" class="brand">Made With <i class="fa fa-heart"></i> For Desserts</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/recommendor">Dessert Recommendation</a>
+          <a href="/baking">Whats Baking?</a>
+          <a href="/builder">Recipe Builder</a>
+        </div>
+      </div>
+    </header>
+
+<div class="results">
+	    <center>
+	      <h2 id="name" class="text-uppercase" style="text-transform:uppercase;font-family:'Rowdies',cursive;color:black;margin-top:140px;">{{dn}}</h2>
+	    </center>
+</div>
+<div id="mycontent">
+    <div id="mcontent">
+      <div class="row">
+        <img class="poster" style="border-radius:40px;margin-left:90px;margin-top:100px;" height="400" width="260" src='{{images}}'>
+        <div class="column" style="margin-top:80px;font-size:20px;font-family:'Rowdies',cursive;">
+        <h6 id="category" style="font-size: 17px;color:black;font-family:'Rowdies',cursive;"><br>CATEGORY: {{category}}</h6>
+        <h6 id="detail" style="font-size: 17px;color:black;font-family:'Rowdies',cursive;"><br>BAKE DETAILS: {{detail}}</h6>
+        <h6 id="ingred" style="font-size: 17px;color:black;font-family:'Rowdies',cursive;"><br>INGREDIENTS: &nbsp;{{ingred}}</h6>
+        <h6 id="instruc" style="font-size: 17px;color:black;font-family:'Rowdies',cursive;"><br>METHOD: &nbsp;{{instruc}}</h6>
+      </div>
+    </div>
+</div>
+    <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+    </script>
+</body>
+</header>
+
