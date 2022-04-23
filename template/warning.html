@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Desserts</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
+          rel="stylesheet" type="text/css" />  
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+  <body>
+    <header>
+      <a href="#" class="brand">Made With <i class="fa fa-heart"></i> For Desserts</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/recommendor">Dessert Recommendation</a>
+          <a href="/baking">Whats Baking?</a>
+          <a href="/builder">Recipe Builder</a>
+        </div>
+      </div>
+    </header>
+
+<div class="container">
+  <div class="alert alert-warning">
+    <strong>Hey there!</strong> Sorry the dessert that you are looking for is not available. Please go back to select a dessert from the available option to view the recommendation
+  </div>
+</div>
+    
+</body>
+</html>
